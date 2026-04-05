@@ -254,7 +254,7 @@ function Body() {
                 <i className="fas fa-clock absolute left-4 top-1/2 -translate-y-1/2 text-[#888] transition-colors duration-300"></i>
                 <input
                   type="number"
-                  placeholder="Duration (hours) Max 12hrs"
+                  placeholder="Duration (24 hours)"
                   min="1"
                   max="24"
                   value={duration}
