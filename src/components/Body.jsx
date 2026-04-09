@@ -77,6 +77,11 @@ function Body() {
       return;
     }
 
+    if (phone.length < 10 || phone.length > 10) {
+      toast.error("Please enter a valid phone no.");
+      return;
+    }
+
     if (!isAuthenticated) {
       toast.error("Please login to book a ride.");
       return;
