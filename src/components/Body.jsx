@@ -10,6 +10,7 @@ function Body() {
   const [name, setName] = useState("");
   const [pickup, setPickup] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [duration, setDuration] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("Online");
   const [isLocating, setIsLocating] = useState(false);
@@ -71,7 +72,7 @@ function Body() {
   };
 
   const handleBooking = async () => {
-    if (!name || !pickup || !phone || !duration) {
+    if (!name || !pickup || !phone || !duration || !email) {
       toast.error("Please fill in all the booking details.");
       return;
     }
@@ -85,6 +86,7 @@ function Body() {
       name,
       pickup,
       phone: "91" + phone,
+      email,
       duration,
       paymentMethod,
       coordinates,
@@ -265,6 +267,18 @@ function Body() {
                       setDuration(duration);
                     }
                   }}
+                  className="w-full bg-[#2a2a2a] border border-[#444] rounded-lg text-[#e0e0e0] text-base px-11 py-4 transition-all duration-300 focus:outline-none focus:border-[#ffc107] focus:shadow-[0_0_0_3px_rgba(255,193,7,0.2)] placeholder:text-[#888]"
+                />
+              </div>
+
+              {/* Email Input */}
+              <div className="relative">
+                <i className="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-[#888] transition-colors duration-300"></i>
+                <input
+                  type="text"
+                  placeholder="Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-[#2a2a2a] border border-[#444] rounded-lg text-[#e0e0e0] text-base px-11 py-4 transition-all duration-300 focus:outline-none focus:border-[#ffc107] focus:shadow-[0_0_0_3px_rgba(255,193,7,0.2)] placeholder:text-[#888]"
                 />
               </div>
